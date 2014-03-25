@@ -4,7 +4,8 @@ var instagramApp = {};
 // This is an anonymous function.  This keeps the from polluting the global
 // namespace
 (function() { 
-  instagramApp.client_id = '2986d0941e7f430db5544c19f30adbe3';
+  instagramApp.client_id = 'd92b924c211f42eeb32a04b809f5590a';
+
 
   instagramApp.target = $("#search-images");
   instagramApp.loading = $("#loading");
