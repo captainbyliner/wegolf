@@ -4,3 +4,7 @@
 	background-color:red;
 	float:right;
 }
+
+#results {
+	display:none;
+}
