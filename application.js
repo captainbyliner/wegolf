@@ -1,136 +1,88 @@
-// Create our app object
-var instagramApp = {};
+//set YouTube API
+var url ="http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668drtQOcQ-2CN9E_ygQYZOKv?alt=json";
 
-// This is an anonymous function.  This keeps the from polluting the global
-// namespace
-(function() { 
-  instagramApp.client_id = 'd92b924c211f42eeb32a04b809f5590a';
+output("Loading Data From " + url);
 
+//Create an AJAX call using the GET method for YouTube API
 
-  instagramApp.target = $("#search-images");
-  instagramApp.loading = $("#loading");
-  instagramApp.searchButton = $("#searchButton");
-  instagramApp.searchInput = $("#tags");
-  instagramApp.searchGroup = $("#tags-form-group");
+$.ajax({
+  type: 'GET'
+  url: url,
+  //This is a function that will fire upon a successful return of the API URL
+  success: function(results) {
+    output("Your Data Is Loaded");
 
-  // Bind click event to search button
-  instagramApp.searchButton.on('click', function(e) {
-    // Stop the browser from submitting the form
-    e.preventDefault();
+    //Our payload is in results.feed. Let's assign it to a variable called data for easy use.
+    var data = results.feed;
 
-    // Reset the class of the search box
-    instagramApp.searchGroup.removeClass('has-error');
+    //Grab some of our meta data
 
-    // Grab the contents of the search bar
-    var tag = instagramApp.cleanTag(instagramApp.searchInput.val());
+    var title = data.title.$t;
+    var author = data.author.$t;
 
-    // Check if the search box is empty
-    if (tag === '') {
-      // If it is, highlight the search box in a red color
-      instagramApp.searchGroup.addClass('has-error');
-    } else {
-      // A tag was submitted, fire the search
-      instagramApp.search(tag);
-    }
-  });
+    output("Playlist Title: " + title);
+    output("Playlist Author: " + author);
 
-  /**
-   * Tag search only takes a single word.  Strip out hash tag and spaces
-   * @param  {String} tag Search tag
-   * @return {String}     Cleaned Search Tag
-   */
-  instagramApp.cleanTag = function(tag) {
+    //Our videos are in an array in data.entry, assign it to a new variable called videos
 
-    // Clean up the tag, no spaces allowed
-    tag = tag.replace(/\s/g, '');
-    tag = tag.replace(/#/g, '');
+    var videos = data.entry;
 
-    return tag;
-  }
+    //videos.length will give us the number of elements in our array
 
-  /**
-   * Display the images retrieved from the API
-   * @param  {array} images An array of image objects
-   */
-  instagramApp.displayImages = function(images) {
-    // Loop through each of the images
-    $.each(images, function(idx, image) {
-      // Create the image
-      var img = $("<img />", {
-        'src': image.images.thumbnail.url,
-        'title': image.caption,
-        'class': 'thumbnail'
-      });
+    output("Total Videos: " + videos.length);
 
-      // Create the wrapping div
-      var div = $("<div />", {
-        'class': 'col-md-2'
-      });
+    //Let's loop through each of the vidoes in the array. This function takes two arguments.
+    //Index is the current eleemtn in the loop and video gives us the video object from the JSON
 
-      // Append the image to the div
-      div.append(img);
+    $.each(videos, function(index, video){
+      //In order to get video ID, we have to parse the thumbnail URL. 
+      //So we look in video.media$group.media$thumbnail, which is an array. 
+      //We only want the to look at first thumbnail in array so we use [0]. 
+      //We use url property to get thumbnail url
 
-      // Hide loading div
-      instagramApp.toggleLoading('hide');
+      var thumb = video.media$group.media$thumbnail[0].url;
 
-      // Append the div to the search-images div
-      instagramApp.target.append(div);
+      //We then split up the URL string on the / which will give us array of bits URL.
+      // So http://i1.ytimg.com/vi/K6G_AWHAIbY/0.jpg
+      // becomes:
+      // ["http:","","i1.ytimg.com","vi","K6G_AWHAIbY","0.jpg"]
+      // We store this in a new variable called bits
+
+      var bits = thumb.split('/');
+
+      // The URL string is consistent for each video, so
+      // looking at the example above we know that the
+      // video ID is in the 5th element of the array.  So
+      // to get the 5th element we use the index 4
+      // which will give us the video ID.
+
+      var id = bits [4];
+
+      //Let's create a link to the video
+
+      output($("<a />" , {
+        target: "_blank",
+        href: video.link[0].href,
+        text: video.title.$t
+      }));
+
+      //Let's embed the video in an iframe
+      output($("<iframe />" , {
+        width: 400,
+        height: 250,
+        src: 'http://www.youtube.com/embed/' + id
+      }));
+
     });
-  };
 
-  /**
-   * Parse the incoming API data
-   * @param  {JSON Object} data The JSON Object returned from the API
-   */
-  instagramApp.parseData = function(data) {
-    // The images are stored in data.data
-    var images = data.data;
+  },
+  dataType:'json'
+});
 
-    // There's all sorts of meta data in here from a caption, to the filter used,
-    // to the time it was uploaded, different size images, etc, etc
-    // console.log(images) to see everything
-    
-    // At this point, we have the images, lets pass it to a helper funtion to
-    // populate our page
-    instagramApp.displayImages(images);
-  };
+// Quick function to write to the #results div
 
-  /**
-   * Perform an API call to Instagram
-   * @param  {String} tag The tag to search for
-   */
-  instagramApp.search = function(tag) {
-    // Set up the API URL
-    var url = "https://api.instagram.com/v1/tags/" + instagramApp.cleanTag(tag) + 
-              "/media/recent?client_id=" + instagramApp.client_id;
-
-    // Empty any previous results
-    instagramApp.target.empty();
-
-    // Show a loading div
-    instagramApp.toggleLoading('show');
-
-    // Use the jQuery AJAX call to send a request to the API.  The dataType
-    // must be JSONP in order to get around the Cross-Domain issues with
-    // RESTful calls.  
-    $.ajax({
-      dataType: "JSONP", // Expected DataType, must be JSONP
-      url: url,          // URL to call
-      success: instagramApp.parseData // Function to execute on success
-    });
-  };
-
-  /**
-   * Toggles the visibility of the loading div
-   */
-  instagramApp.toggleLoading = function(action) {
-    if (action === 'show') {
-      instagramApp.loading.removeClass('hidden');
-    } else {
-      instagramApp.loading.addClass('hidden');
-    }
-  };
-})();
-
-    
-    
+function output(txt) {
+  $("#results").append($("<div />", {
+    html: txt
+  }));
+}
