@@ -1,7 +1,7 @@
 // Set Youtube API URL
 var url = "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668drtQOcQ-2CN9E_ygQYZOKv?alt=json";
 
-output("Loading data from " + url);
+console.log("Loading data from " + url);
 
 // Create an AJAX call using the GET method to the Youtube URL.
 $.ajax({
@@ -10,7 +10,7 @@ $.ajax({
     // This is a function that will fire upon a successfull return
     // of the API URL
     success: function(results) {
-        output("Data loaded");
+        console.log("Data loaded");
         
         // Our payload is in results.feed.  Lets assign it
         // to a variable called data for easier use later on
@@ -20,8 +20,8 @@ $.ajax({
         var title = data.title.$t;
         var updated = data.updated.$t;
         
-        output("Playlist Title: " + title);
-        output("Playlist Updated: " + updated);
+        console.log("Playlist Title: " + title);
+        console.log("Playlist Updated: " + updated);
         
         // Our videos are in an array in data.entry, assign it to 
         // a new variable called videos
