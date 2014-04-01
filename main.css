@@ -5,6 +5,19 @@
 	float:right;
 }
 
+#testOne {
+	height:100px;
+	width:100px;
+	background-color:green;
+	float:right;
+}
+
+#testTwo {
+	height:100px;
+	width:100px;
+	background-color:blue;
+	float:right;
+}
 #results {
 	display:none;
 
