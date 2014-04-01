@@ -1,3 +1,14 @@
+
+
+$(document).ready(function(){
+    $("#test").on('click', function(){
+        $("#results").show();
+    });
+
+});
+
+
+
 // Set Youtube API URL
 var url = "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668drtQOcQ-2CN9E_ygQYZOKv?alt=json";
 
