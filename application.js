@@ -8,14 +8,14 @@ $(document).ready(function(){
 });
 
 var videoList = [{
-    url = "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668exTBycxgaA5mum3M5uiYEb?alt=json",
-    title ="Putting Tips"
+    url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668exTBycxgaA5mum3M5uiYEb?alt=json",
+    title: "Putting Tips"
 },{
-    url = "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668drtQOcQ-2CN9E_ygQYZOKv?alt=json",
-    title = "Bunker Play"
+    url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668drtQOcQ-2CN9E_ygQYZOKv?alt=json",
+    title: "Bunker Play"
 },{
-    url = "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668c0h3wwBbENncXiV3ah11Am?alt=json",
-    title = "Iron Play"
+    url: http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668c0h3wwBbENncXiV3ah11Am?alt=json",
+    title: "Iron Play"
 }];
 
 
