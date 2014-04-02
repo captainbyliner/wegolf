@@ -5,25 +5,49 @@ $(document).ready(function(){
         $("#results").show();
     });
 
+    $(".playlistDiv").on('click', function() {
+      var id = $(this).attr('id');
+      var url = videoList[id].url;
+      loadPlaylist(url);
+    });
 });
 
-var videoList = [{
-    url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668exTBycxgaA5mum3M5uiYEb?alt=json",
-    title: "Putting Tips"
-},{
-    url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668drtQOcQ-2CN9E_ygQYZOKv?alt=json",
-    title: "Bunker Play"
-},{
-    url: http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668c0h3wwBbENncXiV3ah11Am?alt=json",
-    title: "Iron Play"
-}];
+//Place all your YouTube playlists into Associative Array called videoList
 
+var videoList = {
+    'puttingTips': {
+        url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668exTBycxgaA5mum3M5uiYEb?alt=json",
+        title: "Putting Tips"
+    },'bunkerPlay': {
+        url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668drtQOcQ-2CN9E_ygQYZOKv?alt=json",
+        title: "Bunker Play"
+    },'ironPlay': {
+        url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668c0h3wwBbENncXiV3ah11Am?alt=json",
+        title: "Iron Play"
+    },'fitness': {
+        url:"http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668dkipCG7n9aMHZkpVlDNEKY?alt=json",
+        title: "Fitness"
+    },'caddyShack': {
+        url:"http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668dJFSsovY6kbW28dj5qoGq-?alt=json",
+        title:"Caddyshack"
+    }
+};
+
+$.each(videoList, function(index, video) {
+    console.log('Index', index);
+    console.log('Video URL', video.url);
+});
+  
 
 
 // Set Youtube API URL
-var url = videoList.url;
+var url = videoList.ironPlay.url;
 
 console.log("Loading data from " + url);
+
+//Make sure video queue is always empty
+function loadPlaylist(url) {
+    $("#results").empty();
 
 // Create an AJAX call using the GET method to the Youtube URL.
 $.ajax({
@@ -100,6 +124,7 @@ $.ajax({
     },
     dataType: 'json'
 });
+}
 
 // Quick function to write to the #results div
 function output(txt) {
@@ -107,3 +132,5 @@ function output(txt) {
         html: txt 
     }));
 }
+
+

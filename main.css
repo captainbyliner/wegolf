@@ -1,22 +1,32 @@
-#test {
-	height:100px;
-	width:100px;
-	background-color:red;
-	float:right;
+.container {
+	background-color:silver;
 }
 
-#testOne {
-	height:100px;
-	width:100px;
-	background-color:green;
-	float:right;
+#bunkerPlay{
+	background-color:palegoldenrod;
 }
 
-#testTwo {
+#ironPlay{
+	background-color:olivedrab;
+}
+
+#puttingTips{
+	background-color:peru;
+}
+
+#fitness {
+	background-color:powderblue;
+}
+
+#caddyShack {
+	background-color: palegoldenrod;
+}
+
+.videoPicker {
 	height:100px;
 	width:100px;
-	background-color:blue;
 	float:right;
+	margin-right:50px;
 }
 #results {
 
