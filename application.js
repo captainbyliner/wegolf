@@ -5,7 +5,7 @@ $(document).ready(function(){
         $("#results").show();
     });
 
-    $(".playlistDiv").on('click', function() {
+    $(".videoPicker").on('click', function() {
       var id = $(this).attr('id');
       var url = videoList[id].url;
       loadPlaylist(url);
