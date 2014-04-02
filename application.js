@@ -13,17 +13,24 @@ $(document).ready(function(){
 });
 
 var videoList = {
-  'puttingTips': {
-    url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668exTBycxgaA5mum3M5uiYEb?alt=json",
-    title: "Putting Tips"
-  },'bunkerPlay': {
-      url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668drtQOcQ-2CN9E_ygQYZOKv?alt=json",
-      title: "Bunker Play"
-  },'ironPlay': {
-      url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668c0h3wwBbENncXiV3ah11Am?alt=json",
-      title: "Iron Play"
-  }
+    'puttingTips': {
+        url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668exTBycxgaA5mum3M5uiYEb?alt=json",
+        title: "Putting Tips"
+    },'bunkerPlay': {
+        url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668drtQOcQ-2CN9E_ygQYZOKv?alt=json",
+        title: "Bunker Play"
+    },'ironPlay': {
+        url: "http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668c0h3wwBbENncXiV3ah11Am?alt=json",
+        title: "Iron Play"
+    },'fitness': {
+        url:"http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668dkipCG7n9aMHZkpVlDNEKY?alt=json",
+        title: "Fitness"
+    },'caddyShack': {
+        url:"http://gdata.youtube.com/feeds/api/playlists/PLdXfBd5r668dJFSsovY6kbW28dj5qoGq-?alt=json",
+        title:"Caddyshack"
+    }
 };
+
 
 $.each(videoList, function(index, video) {
   console.log('Index', index);
