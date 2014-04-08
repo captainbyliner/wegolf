@@ -11,7 +11,7 @@ $(document).ready(function(){
       loadPlaylist(url);
     });
 
-    $("#hogan").fadeIn(3000);
+    $("#quote").fadeIn(3000);
 
 });
 
