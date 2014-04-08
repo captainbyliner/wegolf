@@ -48,6 +48,10 @@ h3:hover {
 	margin-top:25px;
 }
 
+#quote:hover {
+	color:white;
+}
+
 #bunkerPlay{
 	background-color:palegoldenrod;
 }
@@ -61,7 +65,7 @@ h3:hover {
 }
 
 #fitness {
-	background-color:powderblue;
+	background-color:lightskyblue;
 }
 
 #caddyShack {
