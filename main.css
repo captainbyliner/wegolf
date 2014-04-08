@@ -69,7 +69,7 @@ h3:hover {
 	color:black;
 	font-style:italic;
 	float:right;
-	margin-right:100px;
+	margin-right:200px;
 	margin-top:25px;
 	display:none;
 }
@@ -126,7 +126,7 @@ h3:hover {
 	border-radius:75px;
 	float:right;
 	margin-right:75px;
-	margin-top:25px;
+	margin-top:75px;
 	line-height:150px;
 	vertical-align: middle;
 	text-align: center;
@@ -146,7 +146,6 @@ h3:hover {
 	color:black;
 	position:fixed;
 	top:10px;
-	right:10px;
 }
 
 .clear {
