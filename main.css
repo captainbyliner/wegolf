@@ -110,8 +110,14 @@ h3:hover {
 
 }
 #results {
-	display:inline;
 
+}
+
+#resultsright {
+	height:300px;
+	width:300px;
+	background-color:red;
+	float:right;
 }
 
 .clear {
