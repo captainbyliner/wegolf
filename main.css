@@ -139,16 +139,99 @@ h3:hover {
 }
 
 #resultsright {
-	height:1000px;
-	width:300px;
-	background-color:black;
-	opacity:.7;
-	float:right;
+	height:300px;
+	width:200px;
 	font-family:futura, sans-serif;
 	font-size:44px;
-	color:lightskyblue;
+	color:black;
+	position:fixed;
+	top:10px;
+	right:10px;
 }
 
 .clear {
   clear: both;
+}
+
+.spinsocialicons li { 
+padding:0;
+cursor:pointer;
+display:inline-block;
+width:48px;
+height:48px;
+border-radius:24px;
+background-image:url('http://4.bp.blogspot.com/-f87EvEUWQsk/Un8u2CZzBQI/AAAAAAAAA8Q/cXRy19Y1920/s1600/spin+Social+Icons+-+MYBN.png');
+-webkit-transition: all ease 0.3s;
+-moz-transition: all ease 0.3s;
+-o-transition: all ease 0.3s;
+-ms-transition: all ease 0.3s;
+transition: all ease 0.3s;
+}
+.spinsocialicons li:hover {
+box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+-webkit-transform:rotate(360deg);
+-moz-transform:rotate(360deg);
+-o-transform:rotate(360deg);
+-ms-transform:rotate(360deg);
+transform:rotate(360deg);
+}
+.spinsocialicons li.facebook {
+background-position:0 0;
+}
+.spinsocialicons li.facebook:hover {
+background-position:0 -48px;
+}
+.spinsocialicons li.twitter {
+background-position: -48px 0;
+}
+.spinsocialicons li.twitter:hover {
+background-position: -48px -48px;
+}
+.spinsocialicons li.rss {
+background-position: -96px 0;
+}
+.spinsocialicons li.rss:hover {
+background-position: -96px -48px;
+}
+.spinsocialicons li.google {
+background-position:-144px 0;
+}
+.spinsocialicons li.google:hover {
+background-position:-144px -48px;
+}
+.spinsocialicons li.linkedin {
+background-position: -192px 0;
+}
+.spinsocialicons li.linkedin:hover {
+background-position: -192px -48px;
+}
+.spinsocialicons li.pinterest {
+background-position: -240px 0;
+}
+.spinsocialicons li.pinterest:hover {
+background-position: -240px -48px;
+}
+.spinsocialicons li.stumbleupon {
+background-position: -288px 0;
+}
+.spinsocialicons li.stumbleupon:hover {
+background-position: -288px -48px;
+}
+.spinsocialicons li.reditt {
+background-position: -336px 0;
+}
+.spinsocialicons li.reditt:hover {
+background-position: -336px -48px;
+}
+.spinsocialicons li.instagram {
+background-position: -384px 0;
+}
+.spinsocialicons li.instagram:hover {
+background-position: -384px -48px;
+}
+.spinsocialicons li.tumblr {
+background-position: -432px 0;
+}
+.spinsocialicons li.tumblr:hover {
+background-position: -432px -48px;
 }
