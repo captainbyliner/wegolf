@@ -11,20 +11,20 @@
 	float:left;
 }
 
-.jumbotron {
+.jumbotron1 {
 
 	height:300px;
 	margin-top:-50px;
 }
 
-h1 {
+h2 {
 	font-size:77px;
 	font-family: futura, sans-serif;
 	color:white;
 	font-weight: bold;
 }
 
-h1:hover {
+h2:hover {
 	color:black;
 }
 
