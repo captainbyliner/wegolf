@@ -14,7 +14,7 @@
 .jumbotron1 {
 
 	height:300px;
-	margin-top:50px;
+	margin-top:25px;
 }
 
 h2 {
@@ -45,7 +45,7 @@ h3:hover {
 	font-style:italic;
 	float:right;
 	margin-right:100px;
-	margin-top:50px;
+	margin-top:25px;
 }
 
 #bunkerPlay{
@@ -73,6 +73,7 @@ h3:hover {
 	width:100px;
 	float:right;
 	margin-right:50px;
+	margin-top:25px;
 }
 #results {
 
