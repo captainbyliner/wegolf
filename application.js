@@ -10,6 +10,9 @@ $(document).ready(function(){
       var url = videoList[id].url;
       loadPlaylist(url);
     });
+
+    $("#quote").fadeIn(2000);
+
 });
 
 var videoList = {
