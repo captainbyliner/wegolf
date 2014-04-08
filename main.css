@@ -12,7 +12,7 @@
 }
 
 .middlecontainer {
-	background: url(divot.jpg); no-repeat center center fixed;
+	background: url(photo.jpg); no-repeat center center fixed;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
@@ -25,7 +25,7 @@
 }
 
 .bottomcontainer {
-	background: url(photo.jpg); no-repeat center center fixed;
+	background: url(divot.jpg); no-repeat center center fixed;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
