@@ -14,7 +14,7 @@
 .jumbotron1 {
 
 	height:300px;
-	margin-top:25px;
+	margin-top:50px;
 }
 
 h2 {
@@ -80,6 +80,7 @@ h3:hover {
 	margin-top:25px;
 }
 #results {
+	display:inline;
 
 }
 
