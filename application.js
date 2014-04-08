@@ -13,7 +13,19 @@ $(document).ready(function(){
 
     $("#quote").fadeIn(3000);
 
+    $('[data-slidepanel]').slidepanel({
+              orientation: 'top',
+              mode: 'push'
+          });
+
 });
+
+var options = {
+  orientation: 'left', //default left, available: top, right, bottom, left
+  mode: 'push', //default push, available: push, overlay
+  static: false, //default false, available: true, false
+}
+
 
 var videoList = {
     'puttingTips': {
