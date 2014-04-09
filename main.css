@@ -138,6 +138,32 @@ h3:hover {
 
 }
 
+#rightresults {
+	height:1000px;
+	width:300px;
+	float:right;
+	margin-right:150px;
+	margin-top:100px;
+	border-radius:15px;
+	font-family:futura, sans-serif;
+	font-size:33px;
+	color:black;
+}
+
+a {
+	color:black;
+	background-color:lightskyblue;
+}
+
+a:hover {
+	color:lightskyblue;
+	background-color:black;
+}
+
+li {
+	padding-top:30px;
+}
+
 #socialMedia {
 	height:300px;
 	width:200px;
