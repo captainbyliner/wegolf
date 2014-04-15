@@ -138,6 +138,15 @@ h3:hover {
 
 }
 
+#courses {
+	background-color:red;
+	float:right;
+	margin-right:200px;
+}
+
+#coursenames {
+	display:inline-block;
+}
 #rightresults {
 	height:1000px;
 	width:300px;
