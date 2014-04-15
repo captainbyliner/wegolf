@@ -36,11 +36,6 @@
 	margin-left:auto;
 }
 
-.jumbotron1 {
-
-	height:300px;
-	margin-top:50px;
-}
 
 h2 {
 	font-size:77px;
@@ -139,7 +134,7 @@ h3:hover {
 }
 
 #courses {
-	background-color:red;
+	background-color:blue;
 	float:right;
 	margin-right:200px;
 }
