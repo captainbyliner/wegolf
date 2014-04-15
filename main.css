@@ -145,7 +145,8 @@ h3:hover {
 }
 
 #coursenames {
-	display:inline-block;
+	display:inline;
+
 }
 #rightresults {
 	height:1000px;
