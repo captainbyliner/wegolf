@@ -1,7 +1,7 @@
 .container {
 	width:100%;
 	background-color:black;
-	height:10000px;
+	height:3300px;
 }
 
 .jumbotron1{
@@ -139,12 +139,11 @@ h3:hover {
 }
 
 #courses {
-	background-color:black;
 	opacity:.8;
 	float:right;
 	margin-right:100px;
 	width:400px;
-	margin-top:200px;
+	margin-top:50px;
 }
 
 #coursenames {
