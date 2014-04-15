@@ -139,16 +139,20 @@ h3:hover {
 }
 
 #courses {
-	background-color:green;
+	background-color:black;
+	opacity:.8;
 	float:right;
 	margin-right:100px;
-	width:300px;
+	width:400px;
+	margin-top:200px;
 }
 
 #coursenames {
-	display:inline;
 	font-family: futura, sans-serif;
 	font-size:44px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:20px;
 
 }
 
