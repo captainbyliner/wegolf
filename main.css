@@ -25,7 +25,6 @@
 	background-size:cover;
 	width:100%;
 	height:1100px;
-	margin-top:730px;
 	margin-right:auto;
 	margin-left:auto;
 }
@@ -140,13 +139,16 @@ h3:hover {
 }
 
 #courses {
-	background-color:blue;
+	background-color:green;
 	float:right;
-	margin-right:200px;
+	margin-right:100px;
+	width:300px;
 }
 
 #coursenames {
 	display:inline;
+	font-family: futura, sans-serif;
+	font-size:44px;
 
 }
 
