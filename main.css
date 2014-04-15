@@ -1,3 +1,9 @@
+.container {
+	width:100%;
+	background-color:black;
+	height:25000px;
+}
+
 .jumbotron1{
 	background: url(1golf2.jpg); no-repeat center center fixed;
 	-webkit-background-size:cover;
